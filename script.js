@@ -320,35 +320,35 @@ ${simbol} ${status}`;
 //         }, 500);
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | UPDATE STATISTIK
-        |--------------------------------------------------------------------------
-        */
+//         /*
+//         |--------------------------------------------------------------------------
+//         | UPDATE STATISTIK
+//         |--------------------------------------------------------------------------
+//         */
 
-        setTimeout(
-            loadStatistics,
-            1500
-        );
-
-
-    } catch (error) {
-
-        console.error(error);
-
-        alert(
-            "Terjadi kesalahan. Silakan coba lagi."
-        );
-
-    }
+//         setTimeout(
+//             loadStatistics,
+//             1500
+//         );
 
 
-    submitButton.disabled = false;
+//     } catch (error) {
 
-    submitButton.innerText =
-        "Kirim Konfirmasi";
+//         console.error(error);
 
-});
+//         alert(
+//             "Terjadi kesalahan. Silakan coba lagi."
+//         );
+
+//     }
+
+
+//     submitButton.disabled = false;
+
+//     submitButton.innerText =
+//         "Kirim Konfirmasi";
+
+// });
 
 
 /*
