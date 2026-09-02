@@ -414,3 +414,19 @@ async function loadStatistics() {
 */
 
 loadStatistics();
+
+
+// TAMU UNDANGAN
+document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const namaTamu = params.get("to");
+
+    const guestName = document.getElementById("guestName");
+
+    if (namaTamu) {
+        guestName.textContent = namaTamu;
+    } else {
+        guestName.textContent = "Tamu Undangan";
+    }
+});
+
