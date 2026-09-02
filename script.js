@@ -42,116 +42,60 @@ const successMessage =
 |--------------------------------------------------------------------------
 */
 
-form.addEventListener("submit", async function (event) {
+
+form.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
+    const nama = document
+        .getElementById("nama")
+        .value
+        .trim();
 
-    const nama =
-        document
-            .getElementById("nama")
-            .value
-            .trim();
+    const ucapan = document
+        .getElementById("ucapan")
+        .value
+        .trim();
 
-
-    const ucapan =
-        document
-            .getElementById("ucapan")
-            .value
-            .trim();
-
-
-    const statusElement =
-        document.querySelector(
-            'input[name="status"]:checked'
-        );
-
+    const statusElement = document.querySelector(
+        'input[name="status"]:checked'
+    );
 
     if (!statusElement) {
-
-        alert(
-            "Silakan pilih konfirmasi kehadiran."
-        );
-
+        alert("Silakan pilih konfirmasi kehadiran.");
         return;
     }
 
+    const status = statusElement.value;
 
-    const status =
-        statusElement.value;
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | TOMBOL LOADING
-    |--------------------------------------------------------------------------
-    */
+    // =========================
+    // TOMBOL LOADING
+    // =========================
 
     submitButton.disabled = true;
-
-    submitButton.innerText =
-        "Mengirim...";
+    submitButton.innerText = "Mengirim...";
 
 
-    /*
-    |--------------------------------------------------------------------------
-    | DATA
-    |--------------------------------------------------------------------------
-    */
+    // =========================
+    // DATA GOOGLE SHEETS
+    // =========================
 
     const data = {
-
         nama: nama,
-
         ucapan: ucapan,
-
         status: status
-
     };
 
 
-    /*
-    |--------------------------------------------------------------------------
-    | KIRIM KE GOOGLE SHEETS
-    |--------------------------------------------------------------------------
-    */
+    // =========================
+    // PESAN WHATSAPP
+    // =========================
 
-    try {
+    const simbol = status === "HADIR"
+        ? "✅"
+        : "❌";
 
-        await fetch(
-            GOOGLE_SCRIPT_URL,
-            {
-
-                method: "POST",
-
-                mode: "no-cors",
-
-                headers: {
-                    "Content-Type":
-                        "text/plain;charset=utf-8"
-                },
-
-                body:
-                    JSON.stringify(data)
-
-            }
-        );
-
-
-        /*
-        |--------------------------------------------------------------------------
-        | PESAN WHATSAPP
-        |--------------------------------------------------------------------------
-        */
-
-        const simbol =
-            status === "HADIR"
-                ? "✅"
-                : "❌";
-
-
-        const pesan =
-
+    const pesan =
 `*UCAPAN SELAMAT & KONFIRMASI KEHADIRAN*
 
 ${ucapan}
@@ -163,46 +107,217 @@ ${nama}
 ${simbol} ${status}`;
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | BUKA WHATSAPP
-        |--------------------------------------------------------------------------
-        */
+    // =========================
+    // URL WHATSAPP
+    // =========================
 
-        const whatsappURL =
-            "https://wa.me/" +
-            NOMOR_WHATSAPP +
-            "?text=" +
-            encodeURIComponent(pesan);
+    const whatsappURL =
+        "https://wa.me/" +
+        NOMOR_WHATSAPP +
+        "?text=" +
+        encodeURIComponent(pesan);
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | TAMPILKAN SUKSES
-        |--------------------------------------------------------------------------
-        */
+    // =========================
+    // BUKA WHATSAPP
+    // LANGSUNG DARI KLIK USER
+    // =========================
 
-        successMessage.style.display =
-            "block";
+    window.location.href = whatsappURL;
 
 
-        form.reset();
+    // =========================
+    // SIMPAN KE GOOGLE SHEETS
+    // =========================
+
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(data)
+    })
+    .catch(function (error) {
+        console.error(
+            "Gagal menyimpan ke Google Sheets:",
+            error
+        );
+    });
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | BUKA WHATSAPP
-        |--------------------------------------------------------------------------
-        */
+    // =========================
+    // RESET FORM
+    // =========================
 
-        setTimeout(function () {
+    successMessage.style.display = "block";
 
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
+    form.reset();
 
-        }, 500);
+});
+
+
+// form.addEventListener("submit", async function (event) {
+
+//     event.preventDefault();
+
+
+//     const nama =
+//         document
+//             .getElementById("nama")
+//             .value
+//             .trim();
+
+
+//     const ucapan =
+//         document
+//             .getElementById("ucapan")
+//             .value
+//             .trim();
+
+
+//     const statusElement =
+//         document.querySelector(
+//             'input[name="status"]:checked'
+//         );
+
+
+//     if (!statusElement) {
+
+//         alert(
+//             "Silakan pilih konfirmasi kehadiran."
+//         );
+
+//         return;
+//     }
+
+
+//     const status =
+//         statusElement.value;
+
+
+//     /*
+//     |--------------------------------------------------------------------------
+//     | TOMBOL LOADING
+//     |--------------------------------------------------------------------------
+//     */
+
+//     submitButton.disabled = true;
+
+//     submitButton.innerText =
+//         "Mengirim...";
+
+
+//     /*
+//     |--------------------------------------------------------------------------
+//     | DATA
+//     |--------------------------------------------------------------------------
+//     */
+
+//     const data = {
+
+//         nama: nama,
+
+//         ucapan: ucapan,
+
+//         status: status
+
+//     };
+
+
+//     /*
+//     |--------------------------------------------------------------------------
+//     | KIRIM KE GOOGLE SHEETS
+//     |--------------------------------------------------------------------------
+//     */
+
+//     try {
+
+//         await fetch(
+//             GOOGLE_SCRIPT_URL,
+//             {
+
+//                 method: "POST",
+
+//                 mode: "no-cors",
+
+//                 headers: {
+//                     "Content-Type":
+//                         "text/plain;charset=utf-8"
+//                 },
+
+//                 body:
+//                     JSON.stringify(data)
+
+//             }
+//         );
+
+
+//         /*
+//         |--------------------------------------------------------------------------
+//         | PESAN WHATSAPP
+//         |--------------------------------------------------------------------------
+//         */
+
+//         const simbol =
+//             status === "HADIR"
+//                 ? "✅"
+//                 : "❌";
+
+
+//         const pesan =
+
+// `*UCAPAN SELAMAT & KONFIRMASI KEHADIRAN*
+
+// ${ucapan}
+
+// *Nama:*
+// ${nama}
+
+// *Konfirmasi Kehadiran:*
+// ${simbol} ${status}`;
+
+
+//         /*
+//         |--------------------------------------------------------------------------
+//         | BUKA WHATSAPP
+//         |--------------------------------------------------------------------------
+//         */
+
+//         const whatsappURL =
+//             "https://wa.me/" +
+//             NOMOR_WHATSAPP +
+//             "?text=" +
+//             encodeURIComponent(pesan);
+
+
+//         /*
+//         |--------------------------------------------------------------------------
+//         | TAMPILKAN SUKSES
+//         |--------------------------------------------------------------------------
+//         */
+
+//         successMessage.style.display =
+//             "block";
+
+
+//         form.reset();
+
+
+//         /*
+//         |--------------------------------------------------------------------------
+//         | BUKA WHATSAPP
+//         |--------------------------------------------------------------------------
+//         */
+
+//         setTimeout(function () {
+
+//             window.open(
+//                 whatsappURL,
+//                 "_blank"
+//             );
+
+//         }, 500);
 
 
         /*
