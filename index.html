@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Ucapan selamat dan konfirmasi kehadiran">
+
+    <title>Reservasi</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+
+  <!-- LOGO / HEADER -->
+  <section class="header">
+
+    <div class="logo-area">
+        <div class="logo">
+            <img src="khs.png" alt="">
+        </div>
+    <h1>GRAND OPENING</h1>
+    </div>
+
+    <div class="rasa">
+        Notaris Kevin Hutama Sutandi, SH., M.Kn
+    </div>
+
+    <div class="line"></div>
+
+    <p class="intro">
+        We are delighted to invite you to the Grand Opening office
+        of Notaris Kevin.
+    </p>
+
+</section>
+
+
+    <!-- DATE -->
+    <section class="date-section">
+
+        <div class="save">
+            SAVE THE<br>
+            DATE
+        </div>
+
+        <div class="date">
+            September 19<sup>th</sup> 2026
+        </div>
+
+        <div class="time">
+            09.00 AM - 02.00 PM
+        </div>
+        
+        
+    <!-- LOCATION -->
+    <section class="location">
+
+        <h3>
+            SOHO Marina Bay. Rukan Manhattan PIK 2
+        </h3>
+
+        <p>
+            Jl. Jend. Sudirman SPPM Blok B9-B10,
+            Muara, Teluk Naga.<br>
+            Tangerang - Banten
+        </p>
+
+        <!-- MAP -->
+        <div class="map">
+
+            <div class="map-label location-label">
+                📍 LOKASI
+            </div>
+
+            <div class="road road-1"></div>
+            <div class="road road-2"></div>
+            <div class="road road-3"></div>
+
+            <span class="map-text text-1">
+                Tokyo Riverside<br>PIK 2
+            </span>
+
+            <span class="map-text text-2">
+                Patung Naga
+            </span>
+
+            <span class="map-text text-3">
+                PIK 2
+            </span>
+
+        </div>
+
+
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=SOHO+Marina+Bay+Rukan+Manhattan+PIK+2"
+            target="_blank"
+            class="btn location-btn"
+        >
+            FIND<br>LOCATION
+        </a>
+
+    </section>
+
+
+        <!-- DESCRIPTION -->
+        <section class="description">
+
+            <p>
+                Be part of an exclusive celebration marking the opening
+                office of Notaris Kevin. The new home of innovation,
+                creativity and limitless possibilities.
+            </p>
+    
+            <p>
+                Join us as we begin an exciting new chapter and create
+                meaningful connections together.
+            </p>
+    
+            <p>
+                Please confirm your attendance before the event date.
+            </p>
+    
+    
+            <!-- RSVP
+            <a
+                href="#rsvp"
+                class="btn rsvp-btn"
+            >
+                CONFIRM RSVP
+            </a> -->
+    
+        </section>
+
+
+            <!-- FORM -->
+
+            <form id="formKonfirmasi">
+
+                <div class="form-group">
+
+                    <label for="ucapan">
+                        Ucapan Selamat
+                    </label>
+
+                    <textarea
+                        id="ucapan"
+                        name="ucapan"
+                        rows="4"
+                        placeholder="Tuliskan ucapan selamat..."
+                        required></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="nama">
+                        Nama
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        placeholder="Masukkan nama Anda"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Konfirmasi Kehadiran
+                    </label>
+
+                    <div class="status-container">
+
+                        <label class="status-option">
+
+                            <input
+                                type="radio"
+                                name="status"
+                                value="HADIR"
+                                required>
+
+                            <span class="status-card">
+                                <span class="status-icon">
+                                    ✓
+                                </span>
+
+                                <span>
+                                    Hadir
+                                </span>
+                            </span>
+
+                        </label>
+
+
+                        <label class="status-option">
+
+                            <input
+                                type="radio"
+                                name="status"
+                                value="TIDAK HADIR">
+
+                            <span class="status-card">
+                                <span class="status-icon">
+                                    ✕
+                                </span>
+
+                                <span>
+                                    Tidak Hadir
+                                </span>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="submitButton">
+
+                    Kirim Konfirmasi
+                </button>
+
+            </form>
+
+
+            <!-- HASIL -->
+
+            <div
+                id="successMessage"
+                class="success-message">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Terima kasih!
+                </h3>
+
+                <p>
+                    Konfirmasi Anda berhasil dikirim.
+                </p>
+
+            </div>
+
+
+            <!-- STATISTIK -->
+
+            <div class="statistics">
+
+                <h2>
+                    Konfirmasi Kehadiran
+                </h2>
+
+                <div class="stats">
+
+                    <div class="stat-box">
+
+                        <span class="stat-number"
+                              id="jumlahHadir">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Hadir
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-box">
+
+                        <span class="stat-number"
+                              id="jumlahTidakHadir">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Tidak Hadir
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-box">
+
+                        <span class="stat-number"
+                              id="jumlahTotal">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Total
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
