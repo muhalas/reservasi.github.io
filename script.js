@@ -96,15 +96,21 @@ form.addEventListener("submit", function (event) {
         : "❌";
 
     const pesan =
-`*UCAPAN SELAMAT & KONFIRMASI KEHADIRAN*
+`*Dear Valued Partners,
 
-${ucapan}
+Thank you for your interest in attending the Grand Opening of Notaris Kevin. We are delighted to invite you to celebrate this special occasion with us.
 
-*Nama:*
-${nama}
+To confirm your attendance, kindly fill in the details below:
 
-*Konfirmasi Kehadiran:*
-${simbol} ${status}`;
+Ucapan : ${ucapan}
+Nama : ${nama}
+Konfirmasi Kehadiran : ${simbol} ${status}
+Number of Guests: (Maximum 2 guests)
+
+We look forward to welcoming you and celebrating this exciting milestone together. ✨
+
+Best regards, 
+Notaris Kevin`;
 
 
     // =========================
@@ -429,4 +435,3 @@ document.addEventListener("DOMContentLoaded", function () {
         guestName.textContent = "Tamu Undangan";
     }
 });
-
