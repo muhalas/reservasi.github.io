@@ -66,94 +66,55 @@ body {
 
 
 .logo-area {
-
     margin-bottom: 35px;
-
 }
 
-
 .house {
-
     font-family:
         "Montserrat",
         sans-serif;
-
     font-size: 34px;
-
     letter-spacing: 3px;
-
 }
 
-
 .rasa {
-
     font-family:
         "Cormorant Garamond",
         serif;
-
     font-size: 40px;
     color: #613421;
-
     font-weight: 700;
-
     line-height: .75;
-
     letter-spacing: 2px;
-
 }
 
-
 .header h1 {
-
     margin-top: 60px;
-
     font-size: 36px;
-
     letter-spacing: 7px;
-
     font-weight: 700;
-
 }
 
 
 .dear {
-
     margin-top: 45px;
-
     font-size: 24px;
-
     font-weight: 600;
-
-}
-
-.guest h2 {
-    margin-top: -20px;
 }
 
 
 .header h2 {
-
-    margin-top: 40px;
-
-    font-size: 31px;
-
+    /* margin-top: 10px; */
+    font-size: 35px;
     font-weight: 600;
-
 }
-
 
 .line {
 
     width: 70%;
-
     height: 1px;
-
-    background:
-        rgba(112,32,32,.7);
-
-    margin:
-        35px auto;
-
+    background: rgba(112,32,32,.7);
+    margin: 35px auto;
 }
 
 
@@ -172,13 +133,9 @@ body {
 
 /* Date */
 .date-section {
-
     text-align: center;
-
     margin-top: 55px;
-
 }
-
 
 .save {
     font-size: 22px;
@@ -187,33 +144,22 @@ body {
 
 
 .date {
-
     margin-top: 10px;
     color: #613421;
     font-family:
         "Cormorant Garamond",
         serif;
-
     font-size: 55px;
-
     font-weight: 700;
-
 }
-
 
 .date sup {
-
     font-size: 22px;
-
 }
 
-
 .time {
-
     margin-top: 12px;
-
     font-size: 17px;
-
 }
 
 
@@ -222,9 +168,7 @@ body {
 ========================= */
 
 .location {
-
     margin-top: 75px;
-
 }
 
 
@@ -253,150 +197,154 @@ body {
 /* =========================
    MAP
 ========================= */
-
 .map {
-
     width: 70%;
-
     aspect-ratio: 1 / 1;
-
-    margin:
-        40px auto;
-
+    margin: 40px auto;
     position: relative;
-
     overflow: hidden;
-
     background:
         var(--maroon);
-
 }
 
 
-/* Roads */
+/* =========================
+   JALAN
+   ========================= */
 
-.road {
-
+.jalan {
     position: absolute;
-
-    border:
-        3px solid white;
-
-    opacity: .9;
-
+    width: 120%;
+    height: 3px;
+    background: #eee;
+    transform-origin: center;
 }
 
+.jalan1 {
+    top: 100px;
+    left: -10%;
+    transform: rotate(32deg);
+}
 
-.road-1 {
+.jalan2 {
+    top: 245px;
+    left: -10%;
+    transform: rotate(15deg);
+}
 
-    width: 130%;
+.jalan3 {
+    top: 270px;
+    left: 25%;
+    width: 350px;
+    transform: rotate(-55deg);
+}
 
-    height: 40%;
-
+.jalan4 {
+    top: 360px;
     left: -20%;
-
-    top: 20%;
-
-    transform:
-        rotate(35deg);
-
-    border-radius: 50%;
-
+    transform: rotate(-18deg);
 }
 
 
-.road-2 {
+/* =========================
+   JALAN MELENGKUNG
+   ========================= */
 
-    width: 90%;
-
-    height: 100%;
-
-    left: 45%;
-
-    top: 10%;
-
-    transform:
-        rotate(5deg);
-
-    border-radius: 50%;
-
-}
-
-
-.road-3 {
-
-    width: 80%;
-
-    height: 80%;
-
-    left: -25%;
-
-    top: 60%;
-
-    transform:
-        rotate(-40deg);
-
-    border-radius: 50%;
-
-}
-
-
-.map-label {
-
+.curve1 {
     position: absolute;
+    width: 300px;
+    height: 300px;
 
-    top: 30px;
+    border: 3px solid #eee;
+    border-left: none;
+    border-bottom: none;
 
-    left: 35%;
+    border-radius: 50%;
 
-    color: white;
+    top: 50px;
+    right: -100px;
 
-    font-size: 14px;
+    transform: rotate(20deg);
+}
 
-    z-index: 2;
+.curve2 {
+    position: absolute;
+    width: 280px;
+    height: 280px;
 
+    border: 3px solid #eee;
+    border-right: none;
+    border-top: none;
+
+    border-radius: 50%;
+
+    bottom: -180px;
+    left: -100px;
 }
 
 
-.map-text {
+/* =========================
+   NAMA TEMPAT
+   ========================= */
 
+.tempat {
     position: absolute;
 
     color: white;
+    font-size: 13px;
+    font-weight: bold;
 
-    font-size: 12px;
+    text-align: center;
+}
 
-    z-index: 2;
+.pik {
+    top: 170px;
+    right: 55px;
+}
 
+.golf {
+    bottom: 65px;
+    right: 45px;
+}
+
+.gallery {
+    top: 285px;
+    left: 45px;
 }
 
 
-.text-1 {
+/* =========================
+   PIN LOKASI
+   ========================= */
 
-    top: 45%;
+.lokasi {
+    position: absolute;
 
-    right: 20%;
+    top: 45px;
+    left: 38%;
 
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
 }
 
+.pin {
+    width: 10px;
+    height: 10px;
 
-.text-2 {
+    background: #ff4d8d;
 
-    top: 62%;
+    border-radius: 50%;
 
-    right: 4%;
+    margin: auto;
 
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.2);
 }
 
-
-.text-3 {
-
-    bottom: 12%;
-
-    left: 50%;
-
+.pin-text {
+    margin-top: 5px;
 }
-
 
 /* =========================
    BUTTON
@@ -478,13 +426,10 @@ h1 {
 
 .description {
     font-size: 14px;
-
     line-height: 1.8;
-
     /* color: #8b7770; */
     color: #651010;
-
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 
@@ -785,11 +730,9 @@ button:disabled {
         gap: 7px;
     }
 
-
     .stat-box {
         padding: 15px 5px;
     }
-
 
     .stat-number {
         font-size: 27px;
