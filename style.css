@@ -53,13 +53,6 @@ body {
     border-radius: 10px;
 }
 
-/* .ornament {
-    font-size: 45px;
-
-    color: #b88968;
-
-    margin-bottom: 5px;
-} */
 
 /* =========================
    HEADER
@@ -131,6 +124,10 @@ body {
 
     font-weight: 600;
 
+}
+
+.guest h2 {
+    margin-top: -20px;
 }
 
 
