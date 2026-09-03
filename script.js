@@ -52,10 +52,10 @@ form.addEventListener("submit", function (event) {
         .value
         .trim();
 
-    const ucapan = document
-        .getElementById("ucapan")
-        .value
-        .trim();
+    // const ucapan = document
+    //     .getElementById("ucapan")
+    //     .value
+    //     .trim();
 
     const statusElement = document.querySelector(
         'input[name="status"]:checked'
@@ -82,7 +82,7 @@ form.addEventListener("submit", function (event) {
 
     const data = {
         nama: nama,
-        ucapan: ucapan,
+        // ucapan: ucapan,
         status: status
     };
 
@@ -102,15 +102,13 @@ Thank you for your interest in attending the Inauguration of Notaris Kevin. We a
 
 To confirm your attendance, kindly fill in the details below:
 
-Ucapan : ${ucapan}
 Nama : ${nama}
 Konfirmasi Kehadiran : ${simbol} ${status}
-Number of Guests: (Maximum 2 guests)
 
 We look forward to welcoming you and celebrating this exciting milestone together. ✨
 
 Best regards, 
-Notaris Kevin`;
+Notaris Kevin Hutama Sutandi, S.H., M.Kn.`;
 
 
     // =========================
