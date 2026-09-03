@@ -7,7 +7,7 @@
 // GANTI dengan URL Web App Google Apps Script Anda
 
 const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbymP4QRvOGTDP97-lYclphhgWHhUWpMaWtCGJYUZ-Rnck7TXuhk7WJG8cMkcNbojgPf/dev";
+    "https://script.google.com/macros/s/AKfycbyeaxL-9hHTckoU3ynJGCqL-RpDMosDOcwsxUTiP5RC8aJUoeacvNXqJR-9sFUNgCY/exec";
 
 
 // Nomor WhatsApp tujuan
