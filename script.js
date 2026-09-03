@@ -98,7 +98,7 @@ form.addEventListener("submit", function (event) {
     const pesan =
 `*Dear Valued Partners,
 
-Thank you for your interest in attending the Grand Opening of Notaris Kevin. We are delighted to invite you to celebrate this special occasion with us.
+Thank you for your interest in attending the Inauguration of Notaris Kevin. We are delighted to invite you to celebrate this special occasion with us.
 
 To confirm your attendance, kindly fill in the details below:
 
